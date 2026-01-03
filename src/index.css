@@ -1,0 +1,28 @@
+/* GoogleFonts */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+/* TailwindCSS */
+@import "tailwindcss";
+
+/* GlobalStyles */
+@theme {
+  --primary-color: #170a24;
+  --secondary-color: #fa614f;
+  --tertiary-color: #8c01db;
+  --quaternary-color: #ffffff;
+  --primary-gray: #4f4f4f;
+  --secondary-gray: #c1c1c1;
+  --tertiary-gray: #f4f5f8;
+  --text-primary-color: #ffffff;
+  --text-secondary-color: #170a24;
+  --text-hover-color: #fa614f;
+}
+
+@layer base {
+  body {
+    font-family: "Outfit", sans-serif;
+    color: var(--text-primary-color);
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+  }
+}
