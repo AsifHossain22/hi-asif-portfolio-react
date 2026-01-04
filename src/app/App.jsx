@@ -4,8 +4,10 @@ import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Skills from "../components/sections/Skills";
 import Projects from "../components/sections/Projects";
+import Testimonials from "../components/sections/Testimonials";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/layouts/Footer/Footer";
+import MobileNav from "../components/layouts/Navbar/MobileNav";
 
 const App = () => {
   return (
@@ -14,24 +16,30 @@ const App = () => {
       <Navbar />
 
       {/* Main - AllSections */}
-      <main>
-        {/* Hero */}
+      <main className="w-[90%] max-w-7xl mx-auto">
+        {/* TODO: Hero */}
         <Hero />
 
-        {/* About */}
+        {/* TODO: About */}
         <About />
 
-        {/* Skills */}
+        {/* TODO: Skills */}
         <Skills />
 
-        {/* Projects */}
+        {/* TODO: Projects */}
         <Projects />
 
-        {/* Contact */}
+        {/* TODO: Testimonial */}
+        <Testimonials />
+
+        {/* TODO: Contact */}
         <Contact />
       </main>
 
-      {/* Footer */}
+      {/* MobileMenu */}
+      <MobileNav />
+
+      {/* TODO: Footer */}
       <Footer />
     </>
   );

@@ -1,11 +1,29 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
-const UseScrollSpy = () => {
-  return (
-    <div>
-      <h1>Use Scroll Spy</h1>
-    </div>
-  );
-};
+export default function useScrollSpy(sectionIds, offset = 100) {
+  const [activeSection, setActionSection] = useState("home");
 
-export default UseScrollSpy;
+  useEffect(() => {
+    const onScroll = () => {
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const section = document.getElementById(id);
+
+        if (section) {
+          const top = section.offsetTop - offset;
+
+          if (window.scrollY >= top) {
+            setActionSection(id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [sectionIds, offset]);
+  return activeSection;
+}
