@@ -6,6 +6,9 @@
 
 /* GlobalStyles */
 :root {
+  /* Fonts */
+  --primary-font: "Outfit", sans-serif;
+
   /* Backgrounds */
   --bg-primary: #170a24;
   --bg-secondary: #0f051a;
@@ -29,7 +32,7 @@
   --gray-bg: #f4f5f8;
 }
 
-/* LightTheme */
+/* LightThemeStyles */
 [data-theme="light"] {
   --bg-primary: #ffffff;
   --bg-secondary: #f4f5f8;
@@ -53,9 +56,8 @@
   html {
     scroll-behavior: smooth;
   }
-
   body {
-    font-family: "Outfit", sans-serif;
+    font-family: var(--primary-font);
     background-color: var(--bg-primary);
     color: var(--text-primary);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -66,12 +68,10 @@
   ::-webkit-scrollbar-track {
     background: #0a0a0a;
   }
-
   ::-webkit-slider-thumb {
     background: linear-gradient(180deg, var(--accent-primary));
     border-radius: 5px;
   }
-
   ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(
       180deg,
@@ -91,144 +91,264 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
   .hide-scrollbar::webkit-scrollbar {
     display: none;
   }
 
-  /* GradientTextStyle */
-  .gradientTextColor {
-    background: linear-gradient(
-        to right,
-        rgb(255, 196, 18) 15.12%,
-        rgb(255, 88, 152) 60.18%
-      )
-      text;
-    -webkit-text-fill-color: transparent;
-    transition-duration: 0.3s;
+  /* LeftQuoteBadgeStyles */
+  .hero-badge-left {
+    left: 5%;
+  }
+  .hero-badge-left p {
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+  }
+  .quote-icon {
+    font-size: 100px;
+    color: var(--accent-primary);
+    display: block;
+    margin-top: -40px;
+    margin-bottom: -70px;
   }
 
-  /* GradientButtonStyle */
-  .gradientButtonColor {
-    background: linear-gradient(
-      to right,
-      rgb(255, 167, 18) 1.1%,
-      rgb(180, 28, 221) 60.1%,
-      rgb(255, 88, 152) 130.3%
-    );
-    background-size: 200% 100%;
-    background-position: left center;
-    border-radius: 999px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 12px;
-    color: rgb(255, 255, 255);
-    transition: background-position 0.3s ease-in-out;
+  /* ExperienceBadgeStyles */
+  .hero-badge-right {
+    right: 5%;
+    text-align: center;
   }
-  .gradientButtonColor:hover {
-    background-position: right center;
+  .exp-number {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--accent-primary);
+  }
+  .exp-text {
+    font-size: 20px;
+    color: var(--text-secondary);
   }
 
-  /* GradientButtonAnimation */
-  .button {
-    color: #ffffff;
-    background: none;
-  }
-  .animateButton {
-    border-radius: 999px;
-    font-weight: bold;
-    background: rgb(255, 167, 18) 1.12%;
-    background: -moz-linear-gradient(
-      top,
-      rgb(255, 167, 18) 0%,
-      rgb(180, 28, 221) 70%,
-      rgb(255, 88, 152) 100%
-    );
-    background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      color-stop(0%, rgb(255, 167, 18)),
-      color-stop(70%, rgb(180, 28, 221)),
-      color-stop(100%, rgb(255, 88, 152))
-    );
-    background: -webkit-linear-gradient(
-      top,
-      rgb(255, 167, 18) 0%,
-      rgb(180, 28, 221) 70%,
-      rgb(255, 88, 152) 100%
-    );
-    background: -o-linear-gradient(
-      top,
-      rgb(255, 167, 18) 0%,
-      rgb(180, 28, 221) 70%,
-      rgb(255, 88, 152) 100%
-    );
-    background: -ms-linear-gradient(
-      top,
-      rgb(255, 167, 18) 0%,
-      rgb(180, 28, 221) 70%,
-      rgb(255, 88, 152) 100%
-    );
-    background: linear-gradient(
-      to bottom,
-      rgb(255, 167, 18) 0%,
-      rgb(180, 28, 221) 70%,
-      rgb(255, 88, 152) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(255, 167, 18)', endColorstr='rgb(255, 167, 18)',GradientType=0 );
-  }
-  @-webkit-keyframes pulseBox {
+  /* FloatingAnimationStyles */
+  @keyframes floatY {
     0% {
-      -webkit-box-shadow: 0px 0px 10px 0px rgba(255, 167, 18, 0.6);
+      transform: translateY(-50%) translateY(0);
+    }
+    50% {
+      transform: translateY(-50%) translateY(-10px);
     }
     100% {
-      -webkit-box-shadow: 0px 0px 18px 0px rgba(255, 167, 18, 0.9);
+      transform: translateY(-50%) translateY(0);
     }
   }
-  @-moz-keyframes pulseBox {
+
+  /* HeroOrbitAnimationStyles */
+  .orbit-ring {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    animation: spinOrbit 18s linear infinite;
+  }
+  .orbit-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+  }
+  .orbit-a {
+    transform: rotate(0deg) translateX(165px);
+  }
+  .orbit-b {
+    transform: rotate(90deg) translateX(165px);
+  }
+  .orbit-c {
+    transform: rotate(180deg) translateX(165px);
+  }
+  .orbit-d {
+    transform: rotate(270deg) translateX(165px);
+  }
+
+  /* Responsvie - MobileDevice */
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .orbit-a {
+      transform: rotate(0deg) translateX(125px);
+    }
+    .orbit-b {
+      transform: rotate(90deg) translateX(125px);
+    }
+    .orbit-c {
+      transform: rotate(180deg) translateX(125px);
+    }
+    .orbit-d {
+      transform: rotate(270deg) translateX(125px);
+    }
+  }
+
+  /* OrbitIconStyles */
+  .orbit-icon {
+    font-size: 38px;
+    color: var(--accent-primary);
+    filter: drop-shadow(0 0 8px var(--accent-primary));
+    animation: counterRotate 18s linear infinite;
+  }
+
+  /* OrbitRotationAnimation */
+  @keyframes spinOrbit {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* CallToActionButtonStyles */
+  .cta-primary {
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-weight: 600;
+    background: var(--accent-primary);
+    color: var(--text-inverted);
+    animation: pulseGlow 2.4s infinite;
+  }
+  .cta-outline {
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-weight: 600;
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    animation: pulseGlow 2.4s infinite;
+  }
+
+  /* Responsive - MobileDevice */
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .cta-primary {
+      padding: 14px 28px;
+    }
+    .cta-outline {
+      padding: 14px 28px;
+    }
+  }
+
+  /* PulseAnimation */
+  @keyframes pulseGlow {
     0% {
-      -moz-box-shadow: 0px 0px 10px 0px rgba(255, 167, 18, 0.6);
+      box-shadow: 0 0 0 0 var(--accent-primary);
+    }
+    70% {
+      box-shadow: 0 0 0 16px transparent;
     }
     100% {
-      -moz-box-shadow: 0px 0px 18px 0px rgba(255, 167, 18, 0.9);
+      box-shadow: 0 0 0 0 transparent;
     }
   }
-  @-o-keyframes pulseBox {
+
+  /* EmojiWaveAnimation */
+  .animate-wave {
+    animation: wave 1.6s infinite;
+  }
+
+  @keyframes wave {
     0% {
-      -o-box-shadow: 0px 0px 10px 0px rgba(255, 167, 18, 0.6);
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(20deg);
+    }
+    40% {
+      transform: rotate(-10deg);
+    }
+    60% {
+      transform: rotate(15deg);
+    }
+    80% {
+      transform: rotate(-5deg);
     }
     100% {
-      -o-box-shadow: 0px 0px 18px 0px rgba(255, 167, 18, 0.9);
+      transform: rotate(0deg);
     }
   }
-  @keyframes pulseBox {
+
+  /* FloatingBadgeStyles */
+  .hero-badge {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 240px;
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    animation: floatY 4s ease-in-out infinite, pulseGlow 2.8s infinite;
+    z-index: 5;
+  }
+
+  /*** FullPageLoader ***/
+  .loader-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loader-inner {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loader-logo {
+    width: 250px;
+    height: auto;
+    z-index: 2;
+    animation: logoPulse 2s ease-in-out infinite;
+  }
+
+  /* Responsive - MobileDevice */
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .loader-inner {
+      width: 200px;
+      height: 200px;
+    }
+    .loader-logo {
+      width: 150px;
+    }
+  }
+
+  /* LoaderRotatingRing */
+  .loader-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--accent-primary);
+    border-right-color: var(--accent-primary);
+    animation: spin 1.2s linear infinite;
+    filter: drop-shadow(0 0 12px var(--accent-primary));
+  }
+
+  /* LogoPulseAnimation */
+  @keyframes logoPulse {
     0% {
-      box-shadow: 0px 0px 10px 0px rgba(255, 167, 18, 0.6);
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
     }
     100% {
-      box-shadow: 0px 0px 18px 0px rgba(255, 167, 18, 0.9);
+      transform: scale(1);
     }
   }
-  .pulseBox {
-    -webkit-animation-name: pulseBox;
-    -moz-animation-name: pulseBox;
-    -o-animation-name: pulseBox;
-    animation-name: pulseBox;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    -o-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    -moz-animation-direction: alternate;
-    -o-animation-direction: alternate;
-    animation-direction: alternate;
-    -webkit-animation-timing-function: ease-in-out;
-    -moz-animation-timing-function: ease-in-out;
-    -o-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    border: 0px;
+
+  /* LoaderRingSpinAnimation */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
   }
 }

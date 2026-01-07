@@ -43,11 +43,11 @@ const MobileNav = () => {
                   }`}
                 >
                   {/* TooltipBox */}
-                  <span className="relative px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap bg-[var(--bg-secondary)] text-[var(--text-primary)] backdrop-blur-md shadow-lg border-white/10">
+                  <span className="relative px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap bg-[var(--accent-primary)] text-[var(--text-inverted)] backdrop-blur-md shadow-lg border-white/10">
                     {link.label}
 
                     {/* TooltipArrow */}
-                    <span className="absolute left-1/2 -bottom-1 h-2 w-2 rotate-45 -translate-x-1/2 bg-[var(--bg-secondary)] border-r border-b border-[var(--border-color)]" />
+                    <span className="absolute left-1/2 -bottom-1 h-2 w-2 rotate-45 -translate-x-1/2 bg-[var(--accent-primary)] border-r border-b border-[var(--accent-primary)]" />
                   </span>
                 </span>
 

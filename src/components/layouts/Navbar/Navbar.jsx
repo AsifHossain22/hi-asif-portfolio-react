@@ -1,4 +1,4 @@
-import logo from "../../../assets/logos/hiAsifLogo.png";
+import logo from "../../../assets/logos/hi-asif-logo.png";
 import { navLinks } from "../../../data/navLinks";
 import useScrollSpy from "../../../hooks/UseScrollSpy";
 import PrimaryButton from "../../ui/PrimaryButton";
@@ -17,7 +17,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Hi ASIF | Frontend React Developer | Full-Stack Web Developer"
-              className="w-22 h-8 md:w-30 md:h-10 lg:w-40 lg:h-12"
+              className="w-24 h-8 md:w-30 md:h-10 lg:w-40 lg:h-12"
             />
           </a>
 
