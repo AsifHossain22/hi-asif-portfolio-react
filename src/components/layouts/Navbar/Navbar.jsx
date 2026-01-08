@@ -16,7 +16,7 @@ const Navbar = () => {
           <a href="#home">
             <img
               src={logo}
-              alt="Hi ASIF | Frontend React Developer | Full-Stack Web Developer"
+              alt="Hi ASIF | Frontend Developer | MERN Stack Developer"
               className="w-24 h-8 md:w-30 md:h-10 lg:w-40 lg:h-12"
             />
           </a>
@@ -29,8 +29,8 @@ const Navbar = () => {
                 href={`#${link.id}`}
                 className={`text-sm font-medium transition-all duration-300 ${
                   activeSection === link.id
-                    ? "text-[var(--accent-primary)]"
-                    : "text-[var(--text-primary)] hover:text-[var(--accent-primary)]"
+                    ? "text-(--accent-primary)"
+                    : "text-(--text-primary) hover:text-(--accent-primary)"
                 }`}
               >
                 {link.label}

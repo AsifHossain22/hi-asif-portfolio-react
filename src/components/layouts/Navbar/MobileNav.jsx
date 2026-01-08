@@ -30,8 +30,8 @@ const MobileNav = () => {
                 href={`#${link.id}`}
                 className={`relative flex items-center justify-center px-3 py-2 rounded-xl transition-all duration-300 ${
                   isActive
-                    ? "bg-[var(--accent-primary)] text-[var(--text-inverted)]"
-                    : "text-[var(--text-secondary)]"
+                    ? "bg-(--accent-primary) text-(--text-inverted)"
+                    : "text-(--text-secondary)"
                 }`}
               >
                 {/* FloatingLabel - Tooltip */}
@@ -43,11 +43,14 @@ const MobileNav = () => {
                   }`}
                 >
                   {/* TooltipBox */}
-                  <span className="relative px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap bg-[var(--accent-primary)] text-[var(--text-inverted)] backdrop-blur-md shadow-lg border-white/10">
+                  <span
+                    className="relative px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap 
+                  bg-(--accent-primary) text-(--text-inverted) backdrop-blur-md shadow-lg border-white/10"
+                  >
                     {link.label}
 
                     {/* TooltipArrow */}
-                    <span className="absolute left-1/2 -bottom-1 h-2 w-2 rotate-45 -translate-x-1/2 bg-[var(--accent-primary)] border-r border-b border-[var(--accent-primary)]" />
+                    <span className="absolute left-1/2 -bottom-1 h-2 w-2 rotate-45 -translate-x-1/2 bg-(--accent-primary) border-r border-b border-(--accent-primary)" />
                   </span>
                 </span>
 

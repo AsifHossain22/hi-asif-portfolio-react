@@ -12,13 +12,12 @@ const PrimaryButton = () => {
         <a
           href="#contact"
           className="
-          
                 flex items-center justify-center
                 px-3 py-1 md:px-4 md:py-2 rounded-xl
                 text-xs md:text-sm font-semibold
                 transition-all duration-300
-                border border-[var(--accent-primary)]
-                hover:bg-transparent hover:text-[var(--accent-primary)]
+                border border-(--accent-primary)
+                hover:bg-transparent hover:text-(--accent-primary)
                 cta-primary
               "
         >
@@ -29,12 +28,12 @@ const PrimaryButton = () => {
         <button
           onClick={toggleTheme}
           aria-label="Toggle theme"
-          className="h-10 w-10 flex items-center justify-center rounded-xl bg-transparent border border-[var(--border-color)] transition-all duration-300 hover:scale-105 active:scale-95"
+          className="h-10 w-10 flex items-center justify-center rounded-xl bg-transparent border border-(--border-color) transition-all duration-300 hover:scale-105 active:scale-95"
         >
           {theme === "dark" ? (
-            <Sun size={18} className="text-[var(--accent-primary)]" />
+            <Sun size={18} className="text-(--accent-primary)" />
           ) : (
-            <Moon size={18} className="text-[var(--accent-primary)]" />
+            <Moon size={18} className="text-(--accent-primary)" />
           )}
         </button>
       </div>

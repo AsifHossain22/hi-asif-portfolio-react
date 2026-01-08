@@ -156,16 +156,16 @@
     height: 0;
   }
   .orbit-a {
-    transform: rotate(0deg) translateX(165px);
+    transform: rotate(0deg) translateX(175px);
   }
   .orbit-b {
-    transform: rotate(90deg) translateX(165px);
+    transform: rotate(90deg) translateX(175px);
   }
   .orbit-c {
-    transform: rotate(180deg) translateX(165px);
+    transform: rotate(180deg) translateX(175px);
   }
   .orbit-d {
-    transform: rotate(270deg) translateX(165px);
+    transform: rotate(270deg) translateX(175px);
   }
 
   /* Responsvie - MobileDevice */
@@ -282,6 +282,25 @@
     backdrop-filter: blur(10px);
     animation: floatY 4s ease-in-out infinite, pulseGlow 2.8s infinite;
     z-index: 5;
+  }
+
+  #home {
+    background-image: url(./assets/images/banner-bg-welcome-overlay.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #about {
+    background-image: url(./assets/images/about-us-bg.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* SectionHeaderStyles */
+  .section-header-icon {
+    width: 50px;
+    margin: 10px 0 0 0;
   }
 
   /*** FullPageLoader ***/

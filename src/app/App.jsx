@@ -28,11 +28,11 @@ const App = () => {
       <Navbar />
 
       {/* Main - AllSections */}
-      <main className="w-[90%] max-w-7xl mx-auto">
+      <main>
         {/* Hero */}
         <Hero />
 
-        {/* TODO: About */}
+        {/* About */}
         <About />
 
         {/* TODO: Skills */}
