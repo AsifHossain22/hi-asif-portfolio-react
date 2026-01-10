@@ -1,5 +1,5 @@
 // LucideIcons
-import { Home, User, Code, Folder, MessageSquare } from "lucide-react";
+import { Home, User, Folder, MessageSquare, Settings } from "lucide-react";
 
 // ReactIcons
 import { HiMail } from "react-icons/hi";
@@ -8,7 +8,7 @@ import { HiMail } from "react-icons/hi";
 export const navLinks = [
   { id: "home", label: "Home", icon: Home },
   { id: "about", label: "About", icon: User },
-  { id: "skills", label: "Skills", icon: Code },
+  { id: "services", label: "Services", icon: Settings },
   { id: "projects", label: "Projects", icon: Folder },
   { id: "testimonials", label: "Testimonials", icon: MessageSquare },
   { id: "contact", label: "Contact", icon: HiMail },

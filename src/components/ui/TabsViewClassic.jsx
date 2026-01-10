@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TimelineEducation from "./TimelineEducation";
-import TimelineProfessional from "./TimelineProfessional";
+import TimelineExperience from "./TimelineExperience";
 
 export default function TabsViewClassic() {
   const [activeTab, setActiveTab] = useState("education");
@@ -9,7 +9,7 @@ export default function TabsViewClassic() {
   return (
     <div className="relative overflow-hidden rounded-xl">
       {/* Tab Buttons */}
-      <div className="grid grid-cols-2 gap-4 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
         <button
           onClick={() => setActiveTab("education")}
           className={`p-4 rounded-xl font-medium transition-all
@@ -46,7 +46,7 @@ export default function TabsViewClassic() {
           className="rounded-xl p-6 bg-(--bg-secondary) border border-(--border-color)"
         >
           {activeTab === "education" && <TimelineEducation />}
-          {activeTab === "professional" && <TimelineProfessional />}
+          {activeTab === "professional" && <TimelineExperience />}
         </motion.div>
       </AnimatePresence>
     </div>

@@ -296,12 +296,21 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  #services {
+    background-image: url(./assets/images/area-bg-before.svg),
+      url(./assets/images/area-bg-after.svg);
+    background-position: left top -100px, right bottom -100px;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
 
   /* SectionHeaderStyles */
   .section-header-icon {
     width: 50px;
     margin: 10px 0 0 0;
   }
+
+  /* AccordionStyles */
 
   /*** FullPageLoader ***/
   .loader-wrapper {

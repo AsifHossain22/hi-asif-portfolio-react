@@ -1,91 +1,108 @@
-import { useState, useCallback, memo } from "react";
-import { ChevronDown } from "lucide-react";
+import React, { useState } from "react";
 
-// EducationData
-const educationData = [
-  {
-    id: "education-1",
-    subject: "BSc in Artificial Intelligence & Computer Science",
-    institute: "University of Birmingham Dubai",
-    duration: "September, 2025 — Present",
-    description: [
-      "Data Structures & Algorithms, Databases and Web Programming, Functional Programming, Object-Oriented Programming, Operating Systems and Systems Programming, Theories of Computation, Artificial Intelligence I & II, Computer Systems and Professional Practice, Mathematical and Logical Foundations of Computer Science, Security and Networks, Software Engineering, Computer Science Project.",
-    ],
-  },
-  {
-    id: "education-2",
-    subject: "HSC - Intermediate",
-    institute: "Govt. Devendra College",
-    duration: "2017 — 2018",
-    description: ["Group of Science"],
-  },
-  {
-    id: "education-3",
-    subject: "SSC - Secondary School",
-    institute: "Singair Pilot High School",
-    duration: "2015 — 2016",
-    description: ["Group of Science"],
-  },
-];
+const TimelineEducation = () => {
+  const [openIndex, setOpenIndex] = useState(null);
 
-// TimelineItem
-const TimelineItem = memo(function TimelineItem({ item, expanded, onToggle }) {
+  const educationData = [
+    {
+      id: "education-1",
+      subject: "BSc in Artificial Intelligence & Computer Science",
+      institute: "University of Birmingham Dubai",
+      duration: "Sep, 2025 — Present",
+      description: [
+        "Data Structures & Algorithms",
+        "Databases and Web Programming",
+        "Functional Programming",
+        "Object-Oriented Programming",
+        "Operating Systems and Systems Programming",
+        "Theories of Computation",
+        "Artificial Intelligence I & II",
+        "Computer Systems and Professional Practice",
+        "Mathematical and Logical Foundations of Computer Science",
+        "Security and Networks",
+        "Software Engineering",
+        "Computer Science Project",
+      ],
+    },
+    {
+      id: "education-2",
+      subject: "HSC - Intermediate",
+      institute: "Govt. Devendra College",
+      duration: "2017 — 2018",
+      description: ["Group of Science"],
+    },
+    {
+      id: "education-3",
+      subject: "SSC - Secondary School",
+      institute: "Singair Pilot High School",
+      duration: "2015 — 2016",
+      description: ["Group of Science"],
+    },
+  ];
   return (
-    <div className="mb-6 border-white/10">
-      <button
-        onClick={() => onToggle(item.id)}
-        className="w-full text-left p-5 rounded-lg bg-(--bg-secondary) border border-white/10"
-      >
-        <div className="flex justify-between items-center">
-          <div>
-            <h3 className="font-semibold">{item.subject}</h3>
-            <p className="text-sm text-(--text-secondary)">{item.institute}</p>
-            <p className="text-sm text-(--text-secondary)">{item.duration}</p>
-          </div>
+    <>
+      <div className="flex flex-col items-center text-center px-3">
+        <h2 className="text-3xl md:text-4xl text-(--text-primary) font-semibold">
+          My <span className="text-(--accent-primary)">Education</span>
+        </h2>
+        <div className="max-w-xl w-full mt-6 flex flex-col gap-4 items-start text-left">
+          {educationData.map((education, index) => (
+            <div key={index} className="flex flex-col items-start w-full">
+              <div
+                className="flex items-center justify-between w-full cursor-pointer bg-linear-to-r from-(--accent-primary) to-(--accent-primary)/25 p-4 rounded"
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              >
+                <div className="flex flex-col gap-1 w-full">
+                  <h2 className="text-sm lg:text-xl">{education.subject}</h2>
 
-          <ChevronDown
-            className={`transition-transform ${expanded ? "rotate-180" : ""}`}
-          />
-        </div>
-      </button>
+                  <div className="flex flex-col lg:flex-row justify-between w-full">
+                    <span className="text-xs lg:text-base">
+                      {education.institute}
+                    </span>
+                    <span className="text-xs lg:text-sm whitespace-nowrap">
+                      {education.duration}
+                    </span>
+                  </div>
+                </div>
 
-      {expanded && (
-        <div className="p-5 text-sm text-(--text-secondary)">
-          {item.description.map((text, i) => (
-            <p key={i}>{text}</p>
+                <svg
+                  width="30"
+                  height="30"
+                  viewBox="0 0 18 18"
+                  fill="#fa614f"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    openIndex === index ? "rotate-180" : ""
+                  } transition-all duration-300`}
+                >
+                  <path
+                    d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
+                    stroke=""
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                className={`text-sm text-(--text-secondary) px-4 overflow-hidden transition-all duration-300 ${
+                  openIndex === index
+                    ? "opacity-100 max-h-96 translate-y-0 pt-4"
+                    : "opacity-0 max-h-0 -translate-y-2"
+                }`}
+              >
+                <ul className="list-disc pl-4">
+                  {education.description.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           ))}
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
-});
+};
 
-// MainComponent
-export default function TimelineEducation() {
-  const [expanded, setExpanded] = useState(new Set());
-
-  const toggle = useCallback((id) => {
-    setExpanded((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
-  }, []);
-
-  return (
-    <div className="border-white/10">
-      <h2 className="text-3xl font-bold text-center mb-10">
-        My <span className="text-(--accent-primary)">Education</span>
-      </h2>
-
-      {educationData.map((item) => (
-        <TimelineItem
-          key={item.id}
-          item={item}
-          expanded={expanded.has(item.id)}
-          onToggle={toggle}
-        />
-      ))}
-    </div>
-  );
-}
+export default TimelineEducation;
