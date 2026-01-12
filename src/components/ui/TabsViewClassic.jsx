@@ -1,15 +1,29 @@
+// SeraUIComponent - TabsViewClassic
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TimelineEducation from "./TimelineEducation";
 import TimelineExperience from "./TimelineExperience";
 
 export default function TabsViewClassic() {
-  const [activeTab, setActiveTab] = useState("education");
+  const [activeTab, setActiveTab] = useState("experience");
 
   return (
     <div className="relative overflow-hidden rounded-xl">
-      {/* Tab Buttons */}
+      {/* TabButtons */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
+        <button
+          onClick={() => setActiveTab("experience")}
+          className={`p-4 rounded-xl font-medium transition-all
+            ${
+              activeTab === "experience"
+                ? "bg-(--accent-primary) text-white"
+                : "bg-(--bg-secondary) border border-(--accent-primary)"
+            }`}
+        >
+          Experience
+        </button>
+
         <button
           onClick={() => setActiveTab("education")}
           className={`p-4 rounded-xl font-medium transition-all
@@ -21,21 +35,9 @@ export default function TabsViewClassic() {
         >
           Education
         </button>
-
-        <button
-          onClick={() => setActiveTab("professional")}
-          className={`p-4 rounded-xl font-medium transition-all
-            ${
-              activeTab === "professional"
-                ? "bg-(--accent-primary) text-white"
-                : "bg-(--bg-secondary) border border-(--accent-primary)"
-            }`}
-        >
-          Experience
-        </button>
       </div>
 
-      {/* Animated Content */}
+      {/* AnimatedContent */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
@@ -45,8 +47,8 @@ export default function TabsViewClassic() {
           transition={{ duration: 0.35 }}
           className="rounded-xl p-6 bg-(--bg-secondary) border border-(--border-color)"
         >
+          {activeTab === "experience" && <TimelineExperience />}
           {activeTab === "education" && <TimelineEducation />}
-          {activeTab === "professional" && <TimelineExperience />}
         </motion.div>
       </AnimatePresence>
     </div>

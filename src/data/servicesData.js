@@ -13,7 +13,7 @@ export const serviceData = [
     title: "Frontend Web Development",
     shortTitle: "Frontend Development",
     description:
-      "Build modern, responsive, and visually appealing user interfaces using HTML, CSS, JavaScript, React and Tailwind CSS.",
+      "Build modern, responsive and visually appealing user interfaces using HTML, CSS, JavaScript, React and Tailwind CSS.",
     icon: FaCode,
   },
   {

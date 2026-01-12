@@ -1,21 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaCode,
-  FaReact,
-  FaServer,
-  FaPlug,
-  FaTachometerAlt,
-  FaTools,
-} from "react-icons/fa";
 import ServiceCard from "../ui/ServiceCard";
 import { serviceData } from "../../data/servicesData";
+import { staggerContainer } from "../../hooks/animation";
 
 const Services = () => {
   return (
-    <section id="services" className="min-h-screen pt-28">
+    <section id="services" className="min-h-screen py-28">
       <div className="w-[90%] max-w-7xl mx-auto">
-        {/* Header */}
+        {/* SectionHeader */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,12 +21,18 @@ const Services = () => {
           </h2>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* ServiceContainer */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
           {serviceData.map((service) => (
             <ServiceCard key={service.id} {...service} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -303,6 +303,29 @@
     background-repeat: no-repeat;
     background-size: auto;
   }
+  #projects {
+    background-image: url(./assets/images/projects-bg-1.png),
+      url(./assets/images/projects-bg-2.png);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  #testimonials {
+    background-image: url(./assets/images/testimonial-bg-1.png),
+      url(./assets/images/testimonial-bg-2.png);
+    background-position: left top -100px, right bottom -100px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding: 100px 0px;
+    overflow: hidden;
+  }
+  .footer {
+    background-image: url(./assets/images/footer-bg-1.png),
+      url(./assets/images/footer-bg-2.png);
+    background-position: left bottom 10%, bottom right;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
 
   /* SectionHeaderStyles */
   .section-header-icon {
@@ -310,7 +333,34 @@
     margin: 10px 0 0 0;
   }
 
-  /* AccordionStyles */
+  /* ProjectSliderStyles */
+  .swiper-button-prev,
+  .swiper-button-next {
+    background: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+    color: white !important;
+    padding: 15px;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    transition-duration: 0.3s;
+  }
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background: transparent;
+    color: var(--accent-primary) !important;
+  }
+
+  /* ContactFormStyles */
+  .contact-input {
+    @apply w-full px-4 py-3 rounded-lg
+  bg-(--bg-primary)
+  text-(--text-primary)
+  placeholder:text-(--text-secondary)
+  border border-transparent
+  focus:outline-none focus:border-(--accent-primary)
+  transition;
+  }
 
   /*** FullPageLoader ***/
   .loader-wrapper {

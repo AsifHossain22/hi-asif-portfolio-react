@@ -1,3 +1,4 @@
+// SeraUIComponent - MarqueeScroller
 import React, { useRef, useEffect, useCallback } from "react";
 function cn(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -88,7 +89,7 @@ function MarqueeSkills({
       {...props}
       ref={containerRef}
       className={cn(
-        "group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)]" +
+        "group flex overflow-hidden p-2 [--gap:2rem] gap-(--gap)" +
           (vertical ? " flex-col" : " flex-row"),
         className
       )}
@@ -98,7 +99,7 @@ function MarqueeSkills({
       <div
         ref={contentRef}
         className={cn(
-          "flex shrink-0 justify-around [gap:var(--gap)]" +
+          "flex shrink-0 justify-around gap-(--gap)" +
             (vertical ? " flex-col" : " flex-row")
         )}
       >

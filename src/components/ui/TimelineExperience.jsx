@@ -1,65 +1,8 @@
 import React, { useState } from "react";
+import { experienceData } from "../../data/experienceData";
 
 const TimelineExperience = () => {
   const [openIndex, setOpenIndex] = useState(null);
-
-  const experienceData = [
-    // {
-    //   id: "experience-1",
-    //   subject: "Full Stack Developer & Continuous Learner",
-    //   institute: "Independent Learning & Experimentation",
-    //   duration: "Ongoing",
-    //   description: [
-    //     "Continuously learning modern web technologies and best practices",
-    //     "Experimenting with Next.js, AI tools and performance optimization techniques",
-    //     "Refactoring code to improve readability, scalability and maintainability",
-    //     "Building real-world inspired projects to solve practical problems",
-    //     "Actively improving problem-solving and debugging skills",
-    //   ],
-    // },
-    {
-      id: "experience-2",
-      subject: "MERN Stack Developer (Project-Based Learning)",
-      institute: "Self-Learning & Real-World Practice",
-      duration: "Ongoing",
-      description: [
-        "Built full-stack applications using MongoDB, Express.js, React and Node.js",
-        "Designed RESTful APIs and handled CRUD operations on the backend",
-        "Integrated frontend and backend with proper data flow and error handling",
-        "Used MongoDB for database modeling and data management",
-        "Implemented authentication and basic authorization logic",
-        "Deployed and tested applications locally and in production environments",
-      ],
-    },
-    {
-      id: "experience-3",
-      subject: "Frontend Developer (Self-Taught)",
-      institute: "Personal Projects & Portfolio",
-      duration: "Jul, 2024 — Jul, 2025",
-      description: [
-        "Built responsive and accessible user interfaces using HTML, CSS, JavaScript and React",
-        "Developed reusable React components and managed state using hooks",
-        "Implemented modern UI designs with Tailwind CSS and CSS animations",
-        "Optimized performance and improved UX for mobile and desktop devices",
-        "Worked with REST APIs to fetch and display dynamic data",
-        "Version controlled projects using Git and GitHub",
-      ],
-    },
-    {
-      id: "experience-4",
-      subject: "Web Development Foundations",
-      institute: "Self-Learning & Practice Projects",
-      duration: "Dec, 2022 — Dec, 2023",
-      description: [
-        "Learned core web technologies including HTML, CSS and JavaScript",
-        "Built static and interactive websites using semantic HTML and modern CSS",
-        "Practiced DOM manipulation and basic logic using JavaScript",
-        "Worked with jQuery for simple UI interactions and effects",
-        "Created and customized websites using WordPress themes and plugins",
-        "Gained strong fundamentals in web layout, responsiveness and browser behavior",
-      ],
-    },
-  ];
 
   return (
     <>
@@ -68,23 +11,31 @@ const TimelineExperience = () => {
           My <span className="text-(--accent-primary)">Experience</span>
         </h2>
         <div className="max-w-xl w-full mt-6 flex flex-col gap-4 items-start text-left">
-          {experienceData.map((education, index) => (
-            <div key={index} className="flex flex-col items-start w-full">
-              <div
-                className="flex items-center justify-between w-full cursor-pointer bg-linear-to-r from-(--accent-primary) to-(--accent-primary)/25 p-4 rounded"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+          {experienceData.map((experience) => (
+            <div
+              key={experience.id}
+              className="flex flex-col items-start w-full"
+            >
+              <button
+                className="flex items-center justify-between w-full cursor-pointer bg-linear-to-r from-(--accent-primary) to-(--accent-primary)/25 p-4 rounded text-left"
+                onClick={() =>
+                  setOpenIndex(
+                    openIndex === experience.id ? null : experience.id
+                  )
+                }
               >
+                {/* ExperienceItem */}
                 <div className="flex flex-col gap-1 w-full">
-                  <h2 className="text-sm lg:text-xl">{education.subject}</h2>
+                  <h2 className="text-sm lg:text-xl">{experience.subject}</h2>
 
-                  <div className="flex flex-col lg:flex-row justify-between w-full">
+                  <p className="flex flex-col lg:flex-row justify-between w-full">
                     <span className="text-xs lg:text-base">
-                      {education.institute}
+                      {experience.institute}
                     </span>
                     <span className="text-xs lg:text-sm whitespace-nowrap">
-                      {education.duration}
+                      {experience.duration}
                     </span>
-                  </div>
+                  </p>
                 </div>
 
                 <svg
@@ -94,7 +45,7 @@ const TimelineExperience = () => {
                   fill="#fa614f"
                   xmlns="http://www.w3.org/2000/svg"
                   className={`${
-                    openIndex === index ? "rotate-180" : ""
+                    openIndex === experience.id ? "rotate-180" : ""
                   } transition-all duration-300`}
                 >
                   <path
@@ -105,16 +56,17 @@ const TimelineExperience = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>
+              </button>
               <div
                 className={`text-sm text-(--text-secondary) px-4 overflow-hidden transition-all duration-300 ${
-                  openIndex === index
+                  openIndex === experience.id
                     ? "opacity-100 max-h-96 translate-y-0 pt-4"
                     : "opacity-0 max-h-0 -translate-y-2"
                 }`}
               >
+                {/* ExperienceDescriptionItem */}
                 <ul className="list-disc pl-4">
-                  {education.description.map((item, i) => (
+                  {experience.description.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>

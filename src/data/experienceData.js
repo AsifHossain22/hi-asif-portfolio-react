@@ -1,13 +1,57 @@
-const experienceData = [
+export const experienceData = [
+  // {
+  //   id: "experience-1",
+  //   subject: "Full Stack Developer & Continuous Learner",
+  //   institute: "Independent Learning & Experimentation",
+  //   duration: "Ongoing",
+  //   description: [
+  //     "Continuously learning modern web technologies and best practices",
+  //     "Experimenting with Next.js, AI tools and performance optimization techniques",
+  //     "Refactoring code to improve readability, scalability and maintainability",
+  //     "Building real-world inspired projects to solve practical problems",
+  //     "Actively improving problem-solving and debugging skills",
+  //   ],
+  // },
   {
-    id: "ex-1",
-    role: "Self Learner / Frontend & MERN Stack Developer",
-    duration: "2022 - Present",
-    description:
-      "Passionate self-taught web developer focused on building modern, responsive web applications using React, Node.js, Express, MongoDB and related technologies.",
-    keyPoints: [
-      "Completed multiple projects to gain strong fundamentals in Frontend and Backend development. Built several projects including portfolio website, demo e-commerce app and task management tools. Practiced implementing REST APIs, state management, authentication and deployment. Continuously learning new technologies such as Next.js and TypeScript. Plan to contribute to real-world projects and open-source to gain hands-on professional experience.",
+    id: "experience-2",
+    subject: "MERN Stack Developer (Project-Based Learning)",
+    institute: "Self-Learning & Real-World Practice",
+    duration: "Dec, 2025 — Present",
+    description: [
+      "Built full-stack applications using MongoDB, Express.js, React and Node.js",
+      "Designed RESTful APIs and handled CRUD operations on the backend",
+      "Integrated frontend and backend with proper data flow and error handling",
+      "Used MongoDB for database modeling and data management",
+      "Implemented authentication and basic authorization logic",
+      "Deployed and tested applications locally and in production environments",
+    ],
+  },
+  {
+    id: "experience-3",
+    subject: "Frontend Developer (Self-Taught)",
+    institute: "Personal Projects & Portfolio",
+    duration: "Jul, 2024 — Jul, 2025",
+    description: [
+      "Built responsive and accessible user interfaces using HTML, CSS, JavaScript and React",
+      "Developed reusable React components and managed state using hooks",
+      "Implemented modern UI designs with Tailwind CSS and CSS animations",
+      "Optimized performance and improved UX for mobile and desktop devices",
+      "Worked with REST APIs to fetch and display dynamic data",
+      "Version controlled projects using Git and GitHub",
+    ],
+  },
+  {
+    id: "experience-4",
+    subject: "Web Development Foundations",
+    institute: "Self-Learning & Practice Projects",
+    duration: "Dec, 2022 — Dec, 2023",
+    description: [
+      "Learned core web technologies including HTML, CSS and JavaScript",
+      "Built static and interactive websites using semantic HTML and modern CSS",
+      "Practiced DOM manipulation and basic logic using JavaScript",
+      "Worked with jQuery for simple UI interactions and effects",
+      "Created and customized websites using WordPress themes and plugins",
+      "Gained strong fundamentals in web layout, responsiveness and browser behavior",
     ],
   },
 ];
-export default experienceData;

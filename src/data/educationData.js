@@ -1,0 +1,36 @@
+export const educationData = [
+  {
+    id: "education-1",
+    subject: "BSc in Artificial Intelligence & Computer Science",
+    institute: "University of Birmingham Dubai",
+    duration: "Sep, 2025 — Present",
+    description: [
+      "Data Structures & Algorithms",
+      "Databases and Web Programming",
+      "Functional Programming",
+      "Object-Oriented Programming",
+      "Operating Systems and Systems Programming",
+      "Theories of Computation",
+      "Artificial Intelligence I & II",
+      "Computer Systems and Professional Practice",
+      "Mathematical and Logical Foundations of Computer Science",
+      "Security and Networks",
+      "Software Engineering",
+      "Computer Science Project",
+    ],
+  },
+  {
+    id: "education-2",
+    subject: "HSC - Intermediate",
+    institute: "Govt. Devendra College",
+    duration: "2017 — 2018",
+    description: ["Group of Science"],
+  },
+  {
+    id: "education-3",
+    subject: "SSC - Secondary School",
+    institute: "Singair Pilot High School",
+    duration: "2015 — 2016",
+    description: ["Group of Science"],
+  },
+];

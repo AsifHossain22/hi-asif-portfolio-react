@@ -4,11 +4,18 @@ import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiMongodb, SiExpress } from "react-icons/si";
 import heroImage from "../../assets/images/hi-asif.jpg";
 import waveIcon from "../../assets/icons/wave-icon.png";
+import { motion } from "framer-motion";
+import { fadeUp, scaleIn, staggerContainer } from "../../hooks/animation";
 
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen">
-      <div className="w-[90%] max-w-7xl mx-auto flex flex-col-reverse lg:flex-col justify-center items-center gap-2 px-6 relative overflow-hidden pt-28">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+        className="w-[90%] max-w-7xl mx-auto flex flex-col-reverse lg:flex-col justify-center items-center gap-2 px-6 relative overflow-hidden pt-28"
+      >
         {/* LeftItem - FloatingAnimatedQuote */}
         <div className="hidden lg:block hero-badge hero-badge-left text-center">
           <span className="quote-icon text-left">“</span>
@@ -57,13 +64,16 @@ const Hero = () => {
           </div>
 
           {/* HeroImage */}
-          <div className="relative z-10 rounded-full p-1.5 bg-(--bg-primary) my-20">
+          <motion.div
+            variants={scaleIn}
+            className="relative z-10 rounded-full p-1.5 bg-(--bg-primary) my-20"
+          >
             <img
               src={heroImage}
               alt="Hi ASIF | Frontend Developer | MERN Stack Developer"
               className="w-50 h-50 md:w-72 md:h-72 rounded-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* TextContainer */}
@@ -77,9 +87,12 @@ const Hero = () => {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-extrabold">
+            <motion.h1
+              variants={fadeUp}
+              className="text-5xl md:text-6xl font-extrabold"
+            >
               I’m <span className="text-(--accent-primary)">Asif</span>
-            </h1>
+            </motion.h1>
 
             <div className="text-lg md:text-3xl font-semibold h-10.5">
               <TypeAnimation
@@ -114,7 +127,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

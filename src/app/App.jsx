@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loader from "../components/ui/Loader";
 import Navbar from "../components/layouts/Navbar/Navbar";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
@@ -6,9 +7,9 @@ import Services from "../components/sections/Services";
 import Projects from "../components/sections/Projects";
 import Testimonials from "../components/sections/Testimonials";
 import Contact from "../components/sections/Contact";
-import Footer from "../components/layouts/Footer/Footer";
 import MobileNav from "../components/layouts/Navbar/MobileNav";
-import Loader from "../components/ui/Loader";
+import Footer from "../components/layouts/Footer/Footer";
+import ScrollToTop from "../components/ui/ScrollToTop";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -38,21 +39,24 @@ const App = () => {
         {/* Services */}
         <Services />
 
-        {/* TODO: Projects */}
+        {/* Projects */}
         <Projects />
 
-        {/* TODO: Testimonial */}
+        {/* Testimonial */}
         <Testimonials />
 
-        {/* TODO: Contact */}
+        {/* Contact */}
         <Contact />
       </main>
 
       {/* MobileMenu */}
       <MobileNav />
 
-      {/* TODO: Footer */}
+      {/* Footer */}
       <Footer />
+
+      {/* Scroll To Top */}
+      <ScrollToTop />
     </>
   );
 };

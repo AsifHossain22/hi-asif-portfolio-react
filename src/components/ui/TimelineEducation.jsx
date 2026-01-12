@@ -1,44 +1,9 @@
 import React, { useState } from "react";
+import { educationData } from "../../data/educationData";
 
 const TimelineEducation = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const educationData = [
-    {
-      id: "education-1",
-      subject: "BSc in Artificial Intelligence & Computer Science",
-      institute: "University of Birmingham Dubai",
-      duration: "Sep, 2025 — Present",
-      description: [
-        "Data Structures & Algorithms",
-        "Databases and Web Programming",
-        "Functional Programming",
-        "Object-Oriented Programming",
-        "Operating Systems and Systems Programming",
-        "Theories of Computation",
-        "Artificial Intelligence I & II",
-        "Computer Systems and Professional Practice",
-        "Mathematical and Logical Foundations of Computer Science",
-        "Security and Networks",
-        "Software Engineering",
-        "Computer Science Project",
-      ],
-    },
-    {
-      id: "education-2",
-      subject: "HSC - Intermediate",
-      institute: "Govt. Devendra College",
-      duration: "2017 — 2018",
-      description: ["Group of Science"],
-    },
-    {
-      id: "education-3",
-      subject: "SSC - Secondary School",
-      institute: "Singair Pilot High School",
-      duration: "2015 — 2016",
-      description: ["Group of Science"],
-    },
-  ];
   return (
     <>
       <div className="flex flex-col items-center text-center px-3">
@@ -46,12 +11,18 @@ const TimelineEducation = () => {
           My <span className="text-(--accent-primary)">Education</span>
         </h2>
         <div className="max-w-xl w-full mt-6 flex flex-col gap-4 items-start text-left">
-          {educationData.map((education, index) => (
-            <div key={index} className="flex flex-col items-start w-full">
-              <div
-                className="flex items-center justify-between w-full cursor-pointer bg-linear-to-r from-(--accent-primary) to-(--accent-primary)/25 p-4 rounded"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+          {educationData.map((education) => (
+            <div
+              key={education.id}
+              className="flex flex-col items-start w-full"
+            >
+              <button
+                className="flex items-center justify-between w-full cursor-pointer bg-linear-to-r from-(--accent-primary) to-(--accent-primary)/25 p-4 rounded text-left"
+                onClick={() =>
+                  setOpenIndex(openIndex === education.id ? null : education.id)
+                }
               >
+                {/* EducationItem */}
                 <div className="flex flex-col gap-1 w-full">
                   <h2 className="text-sm lg:text-xl">{education.subject}</h2>
 
@@ -72,7 +43,7 @@ const TimelineEducation = () => {
                   fill="#fa614f"
                   xmlns="http://www.w3.org/2000/svg"
                   className={`${
-                    openIndex === index ? "rotate-180" : ""
+                    openIndex === education.id ? "rotate-180" : ""
                   } transition-all duration-300`}
                 >
                   <path
@@ -83,14 +54,15 @@ const TimelineEducation = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>
+              </button>
               <div
                 className={`text-sm text-(--text-secondary) px-4 overflow-hidden transition-all duration-300 ${
-                  openIndex === index
+                  openIndex === education.id
                     ? "opacity-100 max-h-96 translate-y-0 pt-4"
                     : "opacity-0 max-h-0 -translate-y-2"
                 }`}
               >
+                {/* EducationDescriptionItem */}
                 <ul className="list-disc pl-4">
                   {education.description.map((item, i) => (
                     <li key={i}>{item}</li>

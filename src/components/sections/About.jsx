@@ -33,7 +33,7 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto"
         >
-          {/* SectionTitle */}
+          {/* SectionHeader */}
           <div>
             {/* Titile */}
             <div className="flex justify-center items-center gap-3">
@@ -63,9 +63,9 @@ const About = () => {
           </div>
         </div>
 
-        {/* Technologies */}
+        {/* TechnologiesIMaster */}
         <div>
-          <h6 className="text-5xl font-bold text-center mb-15">
+          <h6 className="text-4xl md:text-5xl text-center font-bold mb-15">
             Technologies I{" "}
             <span className="text-(--accent-primary)">Master</span>
           </h6>

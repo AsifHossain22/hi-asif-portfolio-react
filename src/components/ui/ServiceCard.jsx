@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { fadeUp } from "../../hooks/animation";
 
 const ServiceCard = ({ title, shortTitle, description, icon: Icon }) => {
   const [visible, setVisible] = useState(false);
@@ -17,8 +18,9 @@ const ServiceCard = ({ title, shortTitle, description, icon: Icon }) => {
 
   return (
     <>
-      {/* CARD */}
+      {/* ServiceCard */}
       <motion.div
+        variants={fadeUp}
         ref={divRef}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setVisible(true)}
@@ -28,7 +30,7 @@ const ServiceCard = ({ title, shortTitle, description, icon: Icon }) => {
         className="relative w-full max-w-sm h-96 rounded-xl p-0.5 bg-(--bg-secondary) backdrop-blur-md overflow-hidden shadow-lg cursor-pointer"
         onClick={() => setOpenModal(true)}
       >
-        {/* Hover Glow */}
+        {/* HoverGlow */}
         {visible && (
           <div
             className="pointer-events-none blur-xl bg-linear-to-r from-(--accent-primary) via-(--accent-primary)/50 to-(--bg-primary) absolute z-0"
@@ -49,12 +51,15 @@ const ServiceCard = ({ title, shortTitle, description, icon: Icon }) => {
             <Icon size={36} />
           </div>
 
+          {/* Title */}
           <h2 className="text-xl font-bold text-(--text-primary)">{title}</h2>
 
+          {/* ShortTitle */}
           <p className="text-sm text-(--accent-primary) font-medium mb-3">
             {shortTitle}
           </p>
 
+          {/* Description */}
           <p className="text-sm text-(--text-secondary) px-3 line-clamp-4">
             {description}
           </p>
@@ -65,9 +70,9 @@ const ServiceCard = ({ title, shortTitle, description, icon: Icon }) => {
         </div>
       </motion.div>
 
-      {/* MODAL */}
+      {/* Modal */}
       {openModal && (
-        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center px-4">
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}

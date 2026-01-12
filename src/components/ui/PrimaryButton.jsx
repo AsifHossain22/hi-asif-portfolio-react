@@ -3,7 +3,7 @@ import Theme from "../../hooks/Theme";
 import { Moon, Sun } from "lucide-react";
 
 const PrimaryButton = () => {
-  const { theme, toggleTheme } = Theme();
+  const { theme, toggleTheme } = Theme(); // ToggleThemeCustomHook
 
   return (
     <>

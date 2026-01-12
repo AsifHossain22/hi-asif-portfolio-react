@@ -2,6 +2,7 @@ import logo from "../../../assets/logos/hi-asif-logo.png";
 import { navLinks } from "../../../data/navLinks";
 import useScrollSpy from "../../../hooks/UseScrollSpy";
 import PrimaryButton from "../../ui/PrimaryButton";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const sectionIds = navLinks.map((link) => link.id);
@@ -10,14 +11,19 @@ const Navbar = () => {
   return (
     <header className="fixed top-6 z-50 w-full flex justify-center pointer-events-none">
       {/* FloatingGlassContainer */}
-      <div className="pointer-events-auto w-[90%] max-w-7xl rounded-2xl backdrop-blur-lg border border-white/10 shadow-lg">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="pointer-events-auto w-[90%] max-w-7xl rounded-2xl backdrop-blur-lg border border-white/10 shadow-lg"
+      >
         <div className="flex items-center justify-between px-6 h-16">
           {/* Logo */}
           <a href="#home">
             <img
               src={logo}
               alt="Hi ASIF | Frontend Developer | MERN Stack Developer"
-              className="w-24 h-8 md:w-30 md:h-10 lg:w-40 lg:h-12"
+              className="w-25 md:w-35 lg:w-45"
             />
           </a>
 
@@ -40,7 +46,7 @@ const Navbar = () => {
           {/* CallToActionButton */}
           <PrimaryButton />
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 };

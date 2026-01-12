@@ -1,4 +1,7 @@
+// SeraUIComponent - CoderProfile
+
 import React from "react";
+import { coderProfileData } from "../../data/coderProfileData";
 export default function CoderProfile() {
   return (
     <div className="flex items-center justify-center">
@@ -6,31 +9,7 @@ export default function CoderProfile() {
     </div>
   );
 }
-const coderData = {
-  name: "Asif Hossain",
-  age: "25",
-  role: "Frontend Developer, MERN Stack Developer",
-  seniority: "Junior",
-  nationality: "Bangladeshi",
-  location: "Dubai, United Arab Emirates",
-  skills: [
-    "MongoDB",
-    "Express.js",
-    "React",
-    "Node.js",
-    "Firebase",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TailwindCSS",
-    "Git",
-    "GitHub",
-    "REST APIs",
-    "Next.js",
-    "AI",
-  ],
-  freelance: "Available",
-};
+
 const CoderProfileCard = () => {
   return (
     <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-lg">
@@ -60,49 +39,55 @@ const CoderProfileCard = () => {
             <div className="pl-6">
               <span className="text-orange-400">name:</span>
               <span className="text-zinc-600">&#39;</span>
-              <span className="text-green-600">{coderData.name}</span>
+              <span className="text-green-600">{coderProfileData.name}</span>
               <span className="text-zinc-600">&#39;,</span>
             </div>
             <div className="pl-6">
               <span className="text-orange-400">age:</span>
               <span className="text-zinc-600">&#39;</span>
-              <span className="text-green-600">{coderData.age}</span>
+              <span className="text-green-600">{coderProfileData.age}</span>
               <span className="text-zinc-600">&#39;,</span>
             </div>
             <div className="pl-6">
               <span className="text-orange-400">role:</span>
               <span className="text-zinc-600">&#39;</span>
-              <span className="text-green-600">{coderData.role}</span>
+              <span className="text-green-600">{coderProfileData.role}</span>
               <span className="text-zinc-600">&#39;,</span>
             </div>
             <div className="pl-6">
               <span className="text-orange-400">seniority:</span>
               <span className="text-zinc-600">&#39;</span>
-              <span className="text-green-600">{coderData.seniority}</span>
+              <span className="text-green-600">
+                {coderProfileData.seniority}
+              </span>
               <span className="text-zinc-600">&#39;,</span>
             </div>
             <div className="pl-6">
               <span className="text-orange-400">nationality:</span>
               <span className="text-zinc-600">&#39;</span>
-              <span className="text-green-600">{coderData.nationality}</span>
+              <span className="text-green-600">
+                {coderProfileData.nationality}
+              </span>
               <span className="text-zinc-600">&#39;,</span>
             </div>
             <div className="pl-6">
               <span className="text-orange-400">location:</span>
               <span className="text-zinc-600">&#39;</span>
-              <span className="text-green-600">{coderData.location}</span>
+              <span className="text-green-600">
+                {coderProfileData.location}
+              </span>
               <span className="text-zinc-600">&#39;,</span>
             </div>
             <div className="pl-6">
               <span className="text-orange-400">skills:</span>
               <span className="text-zinc-600">{"["}</span>
               <div className="pl-6 flex flex-wrap">
-                {coderData.skills.map((skill, index) => (
+                {coderProfileData.skills.map((skill, index) => (
                   <span key={skill} className="mr-1">
                     <span className="text-zinc-600">&#39;</span>
                     <span className="text-green-600">{skill}</span>
                     <span className="text-zinc-600">&#39;</span>
-                    {index < coderData.skills.length - 1 && (
+                    {index < coderProfileData.skills.length - 1 && (
                       <span className="text-zinc-600">, </span>
                     )}
                   </span>
@@ -113,7 +98,9 @@ const CoderProfileCard = () => {
             <div className="pl-6">
               <span className="text-orange-400">freelance:</span>
               <span className="text-zinc-600">&#39;</span>
-              <span className="text-green-600">{coderData.freelance}</span>
+              <span className="text-green-600">
+                {coderProfileData.freelance}
+              </span>
               <span className="text-zinc-600">&#39;,</span>
             </div>
             <div>
