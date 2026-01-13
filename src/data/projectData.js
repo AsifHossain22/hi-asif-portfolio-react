@@ -1,24 +1,38 @@
-// src/data/projectsData.js
 const projectsData = [
   {
-    id: "project-1",
-    title: "SaaS Task Management App",
-    shortDesc: "A full-featured SaaS task management platform",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400",
-    tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
-    github: "https://github.com/yourname/task-app",
-    live: "https://example.com",
+    id: "1",
+    title: "AXIT Landing Page Template",
+    shortDesc:
+      "A modern SaaS landing page template focused on clean design, pricing clarity, and strong CTAs.",
+    image: {
+      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400",
+      alt: "AXIT modern landing page design preview",
+    },
+    tech: [
+      "HTML5",
+      "CSS3",
+      "Responsive Design",
+      "UI/UX Design",
+      "Landing Page Architecture",
+    ],
+    github: "https://github.com/yourname/axit-landing-page",
+    live: "https://example.com/axit",
     caseStudy: {
-      problem: "Managing tasks across teams is inefficient using spreadsheets.",
-      solution: "Built a SaaS platform with authentication and task workflows.",
+      problem:
+        "Startups and product teams need a visually appealing landing page to present features, pricing, and testimonials clearly, but often lack a structured layout that converts users effectively.",
+      solution:
+        "Designed a modern landing page template with a strong hero section, feature tabs, pricing plans, testimonials, and clear call-to-action sections to guide users through the product value.",
       features: [
-        "Authentication & roles",
-        "Task management",
-        "Dashboard analytics",
-        "Responsive UI",
+        "Hero section with signup form",
+        "Tabbed feature section with smooth transitions",
+        "Social media integration",
+        "Pricing plans with highlighted popular option",
+        "Customer testimonials section",
+        "Responsive image and content sections",
+        "Contact form with clean layout",
       ],
-      learnings: "Improved full-stack architecture understanding and JWT auth.",
+      learnings:
+        "Improved understanding of landing page conversion patterns, pricing table design, and structuring long-form layouts for clarity and visual hierarchy.",
     },
   },
 

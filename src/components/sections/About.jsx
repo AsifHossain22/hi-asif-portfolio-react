@@ -3,24 +3,9 @@ import sectionHeaderIcon from "../../assets/icons/span-icon.png";
 import CoderProfile from "../ui/CoderProfile";
 import TabsViewClassic from "../ui/TabsViewClassic";
 import MarqueeSkills from "../ui/MarqueeSkills";
-import {
-  FaCss3,
-  FaGitAlt,
-  FaGithub,
-  FaHtml5,
-  FaNodeJs,
-  FaReact,
-  FaRobot,
-} from "react-icons/fa";
-import {
-  SiExpress,
-  SiJavascript,
-  SiMongodb,
-  SiNextdotjs,
-  SiPostman,
-  SiTailwindcss,
-} from "react-icons/si";
-import { IoLogoFirebase } from "react-icons/io5";
+import { skills } from "../../data/skills";
+import SkillPill from "../ui/SkillPill";
+
 const About = () => {
   return (
     <section id="about" className="min-h-screen">
@@ -64,8 +49,8 @@ const About = () => {
         </div>
 
         {/* TechnologiesIMaster */}
-        <div>
-          <h6 className="text-4xl md:text-5xl text-center font-bold mb-15">
+        <div className="">
+          <h6 className="text-4xl md:text-5xl text-center font-bold mb-5">
             Technologies I{" "}
             <span className="text-(--accent-primary)">Master</span>
           </h6>
@@ -75,20 +60,13 @@ const About = () => {
             pauseOnHover
             className="hover:cursor-pointer"
           >
-            <FaHtml5 className="text-[#E34F26] text-7xl" />
-            <SiMongodb className="text-[#47A248] text-7xl" />
-            <SiExpress className="text-(--accent-primary) text-7xl" />
-            <FaReact className="text-[#61DAFB] text-7xl" />
-            <FaGitAlt className="text-[#F05032] text-7xl" />
-            <FaNodeJs className="text-[#339933] text-7xl" />
-            <SiTailwindcss className="text-[#38B2AC] text-7xl" />
-            <SiPostman className="text-[#FF6C37] text-7xl" />
-            <IoLogoFirebase className="text-[#FFCA28] text-7xl" />
-            <SiNextdotjs className="text-(--accent-primary) text-7xl" />
-            <FaCss3 className="text-[#1572B6] text-7xl" />
-            <SiJavascript className="text-[#F7DF1E] text-7xl" />
-            <FaRobot className="text-[#FF6F61] text-7xl" />
-            <FaGithub className="text-(--accent-primary) text-7xl" />
+            <div className="overflow-hidden w-full py-6">
+              <div className="flex gap-6 animate-marquee">
+                {[...skills, ...skills].map((skill, i) => (
+                  <SkillPill key={i} {...skill} />
+                ))}
+              </div>
+            </div>
           </MarqueeSkills>
         </div>
       </div>
